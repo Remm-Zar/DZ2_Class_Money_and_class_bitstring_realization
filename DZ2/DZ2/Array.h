@@ -16,7 +16,6 @@ public:
 	{
 		if ((len > s_max_len) || (len < 0))
 		{
-			this->~Array();
 			throw exception("Size error. Object's destoyed");
 		}
 		m_len = len;
