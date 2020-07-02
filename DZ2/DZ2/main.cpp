@@ -8,7 +8,7 @@ void V(Array &a,Array &b,Array &c)
     a.print();
 }
 int main()
-{
+{ 
     Money *Der1,a, b(56,99), c(2345,67);
     Array *base,f(6),d{ 44,56,43,77,85,7 }, e{ 7,86,43,12,34,2 };
     BitString *Der2,h,i(21989),j(65474);
@@ -22,7 +22,7 @@ int main()
     //вызов методов через указатели
     base = new Array{ 1,2,3,4,5 };
     Der1 = new Money{ 1234,56 };
-    Der2 = new BitString( 234553343 );
+    Der2 = new BitString( 23455334 );
     cout << "\nBase print: ";
     base->print();
     //Money ptr

@@ -2,6 +2,7 @@
 #include "Array.h"
 #include <iostream>
 #include <initializer_list>
+#include <cmath>
 using namespace std;
 class Money :public Array
 {
@@ -126,8 +127,7 @@ public:
 	}
 	bool operator==(int n)
 	{
-        // ЗДЕСЬ ТЫ double И int СРАВНИВАЕШЬ, ТОЖЕ НЕЛЬЗЯ СТРОГО СРАВНИВАТЬ
-		return (double(*this) == n);
+		return (abs(double(*this) - n)<0.00000001);//REDONE
 	}
 	friend class Account;
 };

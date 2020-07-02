@@ -7,12 +7,9 @@ class Money;
 class Array
 {
 protected:
-    // МАССИВ НАДО ОПРЕДЕЛЯТЬ БЕЗ ИСПОЛЬЗОВАНИЯ ОПЕРАТОРА new,
-    // СТАТИЧЕСКАЯ КОНСТАНТА ПОЗВОЛЯЕТ ЗАДАТЬ РАЗМЕР МАССИВА СРАЗУ
-	unsigned char* m_arr=nullptr;
+	const static short s_max_len=64;//REDONE
+	unsigned char m_arr[s_max_len] = { 0 };
 	short m_len=0;
-    // ЭТУ КОНСТАНТУ НАДО ИНИЦИАЛИЗИРОВАТЬ СРАЗУ ПРИ ОБЪЯВЛЕНИИ
-    const static short s_max_len;
 public:	
 	Array(){}
 	Array(short len)
@@ -22,7 +19,6 @@ public:
 			throw exception("Size error. Object's destoyed");
 		}
 		m_len = len;
-		m_arr = new unsigned char[m_len];
 	}
 	Array(short len, unsigned char* arr) :Array(len)
 	{
@@ -41,12 +37,7 @@ public:
 		}
 	}
 	virtual ~Array()
-	{
-		if (m_arr != nullptr)
-		{
-			delete[]m_arr;
-		}
-	}
+	{}
 	short Len()const
 	{
 		return m_len;

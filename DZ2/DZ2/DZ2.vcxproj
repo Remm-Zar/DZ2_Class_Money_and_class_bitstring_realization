@@ -140,8 +140,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Array.cpp" />
-    <ClCompile Include="BitString.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Money.cpp" />
   </ItemGroup>
