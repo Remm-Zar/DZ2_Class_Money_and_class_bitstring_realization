@@ -5,6 +5,7 @@
 using namespace std;
 class BitString:public Array
 {
+    // В ФАЙЛЕ <cmath> ЕСТЬ ФУНКЦИЯ pow
     long long power(long long num, long long pow)const
     {
         if (pow > 0)
@@ -33,6 +34,9 @@ public:
     {  
        SetString(x);
     }
+   // ССЫЛКА КОНСТАНТНАЯ
+   // СВОИХ ДАННЫХ В КЛАССЕ BitString НЕТ, ПОЭТОМУ НАДО НАПИСАТЬ
+   // КОНСТРУКТОР КОПИРОВАНИЯ ДЛЯ Array И ПЕРЕАДРЕСОВАТЬ ЕМУ КОНСТРУИРОВАНИЕ
    BitString(BitString& b)
    {
        for (int i = 63; i > -1; --i)
@@ -85,6 +89,7 @@ public:
         BitString temp;
         for (int i = 63; i > -1; --i)
         {
+            // НАДО ИСПОЛЬЗОВАТЬ БИТОВЫЕ ОПЕРАЦИИ - |, &
             temp.m_arr[i] = b.m_arr[i] || m_arr[i];
         }
         return temp;
@@ -103,6 +108,7 @@ public:
         BitString temp(*this);
         for (int i = 63; i > -1; --i)
         {
+            // ОТРИЦАНИЕ НА СИМВОЛАХ НЕ РАБОТАЕТ
             temp.m_arr[i] = !temp.m_arr[i];
         }        
         return temp;
