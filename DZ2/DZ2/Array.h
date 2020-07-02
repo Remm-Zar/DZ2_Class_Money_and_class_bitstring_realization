@@ -36,6 +36,13 @@ public:
 			++i;
 		}
 	}
+	Array(const Array& a)
+	{
+		for (int i = 63; i > -1; --i)
+		{
+			m_arr[i] = a.m_arr[i];
+		}
+	}
 	virtual ~Array()
 	{}
 	short Len()const

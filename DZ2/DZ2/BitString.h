@@ -37,13 +37,8 @@ public:
    // ССЫЛКА КОНСТАНТНАЯ
    // СВОИХ ДАННЫХ В КЛАССЕ BitString НЕТ, ПОЭТОМУ НАДО НАПИСАТЬ
    // КОНСТРУКТОР КОПИРОВАНИЯ ДЛЯ Array И ПЕРЕАДРЕСОВАТЬ ЕМУ КОНСТРУИРОВАНИЕ
-   BitString(BitString& b)
-   {
-       for (int i = 63; i > -1; --i)
-       {
-           m_arr[i] = b.m_arr[i];
-       }
-   }
+   BitString(BitString& b) :Array(b)
+   {}
    BitString(const initializer_list<unsigned char>& list) :Array(list)
    {}
    ~BitString()override
@@ -90,7 +85,7 @@ public:
         for (int i = 63; i > -1; --i)
         {
             // НАДО ИСПОЛЬЗОВАТЬ БИТОВЫЕ ОПЕРАЦИИ - |, &
-            temp.m_arr[i] = b.m_arr[i] || m_arr[i];
+            temp.m_arr[i] = b.m_arr[i] | m_arr[i];
         }
         return temp;
     }
@@ -99,7 +94,7 @@ public:
         BitString temp;
         for (int i = 63; i > -1; --i)
         {
-            temp.m_arr[i] = b.m_arr[i] && m_arr[i];
+            temp.m_arr[i] = b.m_arr[i] & m_arr[i];
         }      
         return temp;
     }
