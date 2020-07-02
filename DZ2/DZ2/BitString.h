@@ -5,6 +5,7 @@
 using namespace std;
 class BitString:public Array
 {
+    // ИСПОЛЬЗУЙ МАССИВ ИЗ Array, НЕ НАДО СТРОКУ ДЕЛИТЬ НА ДВЕ ЧАСТИ
     unsigned long m_old[32] = { 0 };
     unsigned long m_young[32] = { 0 };
     

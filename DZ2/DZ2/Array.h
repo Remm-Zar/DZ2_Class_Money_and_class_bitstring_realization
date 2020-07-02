@@ -7,9 +7,12 @@ class Money;
 class Array
 {
 protected:
+    // МАССИВ НАДО ОПРЕДЕЛЯТЬ БЕЗ ИСПОЛЬЗОВАНИЯ ОПЕРАТОРА new,
+    // СТАТИЧЕСКАЯ КОНСТАНТА ПОЗВОЛЯЕТ ЗАДАТЬ РАЗМЕР МАССИВА СРАЗУ
 	unsigned char* m_arr=nullptr;
 	short m_len=0;
-	const static short s_max_len;
+    // ЭТУ КОНСТАНТУ НАДО ИНИЦИАЛИЗИРОВАТЬ СРАЗУ ПРИ ОБЪЯВЛЕНИИ
+    const static short s_max_len;
 public:	
 	Array(){}
 	Array(short len)

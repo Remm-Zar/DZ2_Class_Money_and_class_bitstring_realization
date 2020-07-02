@@ -126,6 +126,7 @@ public:
 	}
 	bool operator==(int n)
 	{
+        // ЗДЕСЬ ТЫ double И int СРАВНИВАЕШЬ, ТОЖЕ НЕЛЬЗЯ СТРОГО СРАВНИВАТЬ
 		return (double(*this) == n);
 	}
 	friend class Account;
