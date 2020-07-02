@@ -33,10 +33,10 @@ int main()
     //
     cout << "\nBitString print: ";
     Der2->print();
-    cout << "\nBitString>>4";
+    cout << "\nBitString>>2";
     *Der2 << 2;
     Der2->print();
-    cout << "\nBitString<<7";
+    cout << "\nBitString<<3";
     *Der2 >>3;
     Der2->print();
     cout << "\n\nBinary output: Examples:";
